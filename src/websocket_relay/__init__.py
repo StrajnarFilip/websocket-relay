@@ -50,10 +50,10 @@ class WebSocketRelay:
 
         # Forward data to all that are subscribed.
         while ws.ready:
-            if type == "binary":
+            if type == "binary" or type == "b":
                 await self._send_binary(ws, clients)
 
-            if type == "text":
+            if type == "text" or type == "t":
                 await self._send_text(ws, clients)
 
         await ws.close()
