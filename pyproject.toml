@@ -27,9 +27,9 @@ classifiers = [
 dependencies = ["falcon", "uvicorn[standard]", "websocket-client", "rel"]
 
 [project.urls]
-Documentation = "https://github.com/unknown/websocket-relay#readme"
-Issues = "https://github.com/unknown/websocket-relay/issues"
-Source = "https://github.com/unknown/websocket-relay"
+Documentation = "https://github.com/StrajnarFilip/websocket-relay"
+Issues = "https://github.com/StrajnarFilip/websocket-relay"
+Source = "https://github.com/StrajnarFilip/websocket-relay"
 
 [tool.hatch.version]
 path = "src/websocket_relay/__about__.py"

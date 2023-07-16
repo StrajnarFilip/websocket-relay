@@ -59,6 +59,6 @@ class WebSocketRelay:
         await ws.close()
 
 
-relay = App()
+relay = App(cors_enable=True)
 # Type can be either text or binary
 relay.add_route('/{type}/{address}/{action}', WebSocketRelay())
