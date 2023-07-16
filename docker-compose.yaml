@@ -1,0 +1,22 @@
+services:
+  websocket-relay:
+    build: .
+    ports:
+      - 5000:5000
+
+  # caddyproxy:
+  #   network_mode: "host"
+  #   image: "caddy"
+  #   restart: "always"
+  #   command:
+  #     [
+  #       "caddy",
+  #       "reverse-proxy",
+  #       "--from",
+  #       "domain.com",
+  #       "--to",
+  #       "127.0.0.1:5000"
+  #     ]
+  #   ports:
+  #     - "0.0.0.0:80:80"
+  #     - "0.0.0.0:443:443"
