@@ -38,8 +38,8 @@ class WebSocketRelay:
             if client != ws and client.ready:
                 await client.send_text(data)
 
-    async def on_websocket(self, _: Request, ws: WebSocket, type: str,
-                           address: str, action: str):
+    async def on_websocket(self, _: Request, ws: WebSocket,
+                           websocket_type: str, address: str, action: str):
         await ws.accept()
 
         self._ensure_structure(address, action)
@@ -50,10 +50,10 @@ class WebSocketRelay:
 
         # Forward data to all that are subscribed.
         while ws.ready:
-            if type == "binary" or type == "b":
+            if websocket_type == "binary" or websocket_type == "b":
                 await self._send_binary(ws, clients)
 
-            if type == "text" or type == "t":
+            if websocket_type == "text" or websocket_type == "t":
                 await self._send_text(ws, clients)
 
         await ws.close()
